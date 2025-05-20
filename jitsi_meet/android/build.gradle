@@ -28,7 +28,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-     namespace 'com.gunschu.jitsi_meet'
+    namespace 'com.gunschu.jitsi_meet'
     compileSdkVersion 31
 
     sourceSets {
