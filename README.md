@@ -1,8 +1,5 @@
 # jitsi_meet
 
-## IMPORTANT ##
-This plugin is no longer maintained. See https://pub.dev/packages/jitsi_meet_wrapper instead.
-
 #### Support us using our patreon account. https://www.patreon.com/Gunschu
 
 
@@ -134,8 +131,9 @@ buildTypes {
         // Signing with the debug keys for now, so `flutter run --release` works.
         signingConfig signingConfigs.debug
         
-        // Add below 2 lines for proguard
+        // Add below 3 lines for proguard
         minifyEnabled true
+        useProguard true
         proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
 }
@@ -207,7 +205,8 @@ _joinMeeting() async {
 	  featureFlag.welcomePageEnabled = false;
 	  featureFlag.resolution = FeatureFlagVideoResolution.MD_RESOLUTION; // Limit video resolution to 360p
 	  
-      var options = JitsiMeetingOptions(room: "myroom") // room is Required, spaces will be trimmed
+      var options = JitsiMeetingOptions()
+        ..room = "myroom" // Required, spaces will be trimmed
         ..serverURL = "https://someHost.com"
         ..subject = "Meeting with Gunschu"
         ..userDisplayName = "My Name"
